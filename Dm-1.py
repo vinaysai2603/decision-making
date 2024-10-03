@@ -12,3 +12,15 @@ Sample Input:
 Sample Output:
 6 less than 8
 '''
+# Get input from the user
+x = int(input("Enter the first number (x): "))  # First integer
+y = int(input("Enter the second number (y): "))  # Second integer
+
+# Compare the two numbers and print the result
+if x == y:
+    print("x and y are equal")
+elif x > y:
+    print(f"{x} greater than {y}")
+else:
+    print(f"{x} less than {y}")
+
