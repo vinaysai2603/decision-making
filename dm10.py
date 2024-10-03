@@ -18,3 +18,28 @@ Sample Input:
 Sample Output:
 L1
 '''
+def allocate_lab(x, y, z, n):
+    labs = {'L1': x, 'L2': y, 'L3': z}
+    
+    suitable_labs = {lab: capacity for lab, capacity in labs.items() if capacity >= n}
+    
+    if not suitable_labs:
+        return "No suitable lab available"
+    
+    # Find the lab with maximum capacity that can accommodate n students
+    selected_lab = max(suitable_labs, key=suitable_labs.get)
+    
+    return selected_lab
+
+# Input
+x = int(input("Enter the capacity of L1: "))  # Seating capacity for L1
+y = int(input("Enter the capacity of L2: "))  # Seating capacity for L2
+z = int(input("Enter the capacity of L3: "))  # Seating capacity for L3
+n = int(input("Enter the number of students: "))  # Number of students
+
+# Allocate the lab
+result = allocate_lab(x, y, z, n)
+
+# Output the result
+print(result)
+
