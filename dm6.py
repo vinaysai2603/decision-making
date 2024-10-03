@@ -31,4 +31,3 @@ age = calculate_age(birth_year, current_year)
 
 # Output the result
 print(age)
-
