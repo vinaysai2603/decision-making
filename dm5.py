@@ -47,3 +47,29 @@ MSH
 Sample Output:
 90000.00
 '''
+def calculate_fee(student_type, tuition_fee, additional_fee):
+    if student_type == "MSDS":
+        return tuition_fee + additional_fee  # Tuition fee + Bus fee
+    elif student_type == "MSH":
+        return tuition_fee + additional_fee  # Tuition fee + Hostel fee
+    elif student_type == "MGSDS":
+        return 1.5 * tuition_fee + additional_fee  # 150% of Tuition fee + Bus fee
+    elif student_type == "MGSH":
+        return 1.5 * tuition_fee + additional_fee  # 150% of Tuition fee + Hostel fee
+    else:
+        return None  # Invalid student type
+
+# Input
+student_type = input("Enter the student type: ")  # e.g., MSDS, MSH, MGSDS, MGSH
+tuition_fee = float(input("Enter the tuition fee: "))  # Tuition fee
+additional_fee = float(input("Enter the bus or hostel fee: "))  # Bus fee or Hostel fee
+
+# Calculate the total fee
+total_fee = calculate_fee(student_type, tuition_fee, additional_fee)
+
+# Output the result
+if total_fee is not None:
+    print(f"{total_fee:.2f}")
+else:
+    print("Invalid student type")
+
