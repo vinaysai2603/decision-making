@@ -13,3 +13,22 @@ Sample Input:
 Sample Output:
 38
 '''
+def calculate_age(birth_year, current_year):
+    # Calculate age
+    age = current_year - birth_year
+    return age
+
+# Input
+birth_year = int(input("Enter the last 2 digits of your birth year: "))  # Birth year (e.g., 62)
+current_year = int(input("Enter the last 2 digits of the current year: "))  # Current year (e.g., 00)
+
+# Adjust for century
+if current_year < birth_year:
+    current_year += 100  # Assume current year is in the 2000s
+
+# Calculate the user's age
+age = calculate_age(birth_year, current_year)
+
+# Output the result
+print(age)
+
