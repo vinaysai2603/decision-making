@@ -17,3 +17,21 @@ Sample Input:
 Sample Output:
 2 
 '''
+def count_accommodating_labs(capacities, num_students):
+    count = sum(1 for capacity in capacities if capacity >= num_students)
+    return count
+
+# Input
+capacity_L1 = int(input("Enter the seating capacity of L1: "))  # Capacity of L1
+capacity_L2 = int(input("Enter the seating capacity of L2: "))  # Capacity of L2
+capacity_L3 = int(input("Enter the seating capacity of L3: "))  # Capacity of L3
+num_students = int(input("Enter the number of students: "))  # Number of students
+
+# Store capacities in a list
+capacities = [capacity_L1, capacity_L2, capacity_L3]
+
+# Count the labs that can accommodate the number of students
+available_labs_count = count_accommodating_labs(capacities, num_students)
+
+# Output the result
+print(available_labs_count)
